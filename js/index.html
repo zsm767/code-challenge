@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Customers App - G4 JS Challenge</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.mind.js"></script>
+  <script>
+	$(function() {
+	
+		var customers = [];
+		<!-- fix up the getJSON command -->
+		$.getJSON('file:///C:/Users/Zach/Documents/Programming/code-challenge/code-challenge/js/customers.json', function(data) {
+			$.each(data.customer, function(i, f) {
+				var tableRow = "<tr>" + "<td>" + f.email + "</td>" + "<td>" + f.first_name + "</td>" + "<td>" + f.last_name + "</td>" + "</tr>"
+				$(tableRow).appendTo("#userdata tbody");
+			});
+		});
+	});
+   </script>
+
+  <body>
+    <!-- Good luck -->
+    <div id="app">
+		<table id="userdata" border="2">
+			<thead>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Email</th>
+				<!--<th></th>-->
+			</thead>
+			<tbody></tbody>
+		</table>
+	</div>
+	
+    <!-- Feel free to update the code and include libraries as you see fit. -->
+  </body>
+</html>
